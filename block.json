@@ -8,6 +8,9 @@
 	"keywords": ["text", "paragraph", "box"],
 	"supports": {
 		"html": false,
+		"spacing": {
+			"padding": true
+		},
 		"color": {
 			"background": true,
 			"text": true,
@@ -38,6 +41,17 @@
 		"gradient": {
 			"type": "string",
 			"defaul": "green-to-yellow"
+		},
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#f03"
+				},
+				"spacing": {
+					"padding": {"top":"50px","right":"50px","bottom":"50px","left":"50px"}
+				}
+			}
 		}
 	}
 }
