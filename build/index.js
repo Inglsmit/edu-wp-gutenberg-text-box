@@ -407,13 +407,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('blocks-course/text-box', {
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
+  variations: [{
+    name: 'blocks-course/gradient-text-box',
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Gradient Text Box'),
+    icon: 'wordpress',
+    attributes: {
+      gradient: 'red-to-blue'
+    }
+  }],
+  transforms: {
+    from: [{
+      type: 'block',
+      blocks: ['core/paragraph'],
+      transform: ({
+        content,
+        align
+      }) => {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["createBlock"])('blocks-course/text-box', {
+          text: content,
+          alignment: align
+        });
+      }
+    }, {
+      type: 'enter',
+      regExp: /textbox/i,
+      transform: () => {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["createBlock"])('blocks-course/text-box', {
+          shadow: true,
+          gradient: 'red-to-blue'
+        });
+      }
+    }, {
+      type: 'prefix',
+      prefix: 'textbox',
+      transform: () => {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["createBlock"])('blocks-course/text-box');
+      }
+    }],
+    to: [{
+      type: 'block',
+      blocks: ['core/paragraph'],
+      isMatch: ({
+        text
+      }) => {
+        return text ? true : false;
+      },
+      transform: ({
+        text,
+        alignment
+      }) => {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["createBlock"])('core/paragraph', {
+          content: text,
+          align: alignment
+        });
+      }
+    }]
+  }
 });
 
 /***/ }),
