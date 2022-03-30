@@ -1,4 +1,11 @@
 {
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/tmp": true,
+        "**/package-lock.json": true
+    },
     "editor.formatOnSave": false,
     "[scss]": {
         "editor.formatOnSave": false,

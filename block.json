@@ -8,13 +8,13 @@
 	"keywords": ["text", "paragraph", "box"],
 	"supports": {
 		"html": false,
-		"spacing": {
-			"padding": true
-		},
 		"color": {
 			"background": true,
 			"text": true,
 			"gradients": true
+		},
+		"spacing": {
+			"padding": true
 		}
 	},
 	"styles": [{
@@ -40,9 +40,9 @@
 		"text": {
 			"type": "string",
 			"source": "html",
-			"selector": "h4"
+			"selector": "p"
 		},
-		"alignment": {
+		"textAlignment": {
 			"type": "string",
 			"default": "left"
 		},
@@ -62,8 +62,7 @@
 			"default": "very-light-gray"
 		},
 		"gradient": {
-			"type": "string",
-			"defaul": "green-to-yellow"
+			"type": "string"
 		},
 		"style": {
 			"type": "object",
